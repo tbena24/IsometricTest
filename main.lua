@@ -44,7 +44,7 @@ function love.draw()
               grid_y + ((x+y) * (block_depth / 2)) - (block_depth * (grid_size / 2)),
               block_width, block_height)
         else -- Grid[x][y] == 2
-           love.graphics.rectangle(blockImage,
+           love.graphics.draw(blockImage,
               grid_x + ((y-x) * (block_width / 2)),
               grid_y + ((x+y) * (block_depth / 2)) - (block_depth * (grid_size / 2)),
               block_width, block_height)
