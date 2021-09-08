@@ -2,7 +2,7 @@
 local grid_size = 20
 
 --# Variables
---local blockImage = love.graphics.newImage("block_test.png")
+local blockImage = love.graphics.newImage("block_test.png")
 
 local Blocks = {}
 local Grid = {}
@@ -26,9 +26,9 @@ for x = 1, grid_size do
   end
 end
 
-local block_width = 30
-local block_height = 30
-local block_depth = 30/2
+local block_width = blockImage:getWidth()/2
+local block_height = blockImage:getHeight()/2
+local block_depth = block_height/2
 local grid_x = 0
 local grid_y = 0
 
@@ -39,12 +39,12 @@ function love.draw()
   for x = 1,grid_size do
      for y = 1,grid_size do
         if Grid[x][y] == 1 then
-           love.graphics.rectangle("line",
+           love.graphics.draw(blockImage,
               grid_x + ((y-x) * (block_width / 2)),
               grid_y + ((x+y) * (block_depth / 2)) - (block_depth * (grid_size / 2)),
               block_width, block_height)
         else -- Grid[x][y] == 2
-           love.graphics.rectangle("line",
+           love.graphics.rectangle(blockImage,
               grid_x + ((y-x) * (block_width / 2)),
               grid_y + ((x+y) * (block_depth / 2)) - (block_depth * (grid_size / 2)),
               block_width, block_height)
