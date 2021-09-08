@@ -1,5 +1,5 @@
 --# Constants
-local grid_size = 20
+local grid_size = 10
 
 --# Variables
 local blockImage = love.graphics.newImage("block_test.png")
@@ -26,8 +26,8 @@ for x = 1, grid_size do
   end
 end
 
-local block_width = blockImage:getWidth()/2
-local block_height = blockImage:getHeight()/2
+local block_width = blockImage:getWidth()/8
+local block_height = blockImage:getHeight()/8
 local block_depth = block_height/2
 local grid_x = 0
 local grid_y = 0
